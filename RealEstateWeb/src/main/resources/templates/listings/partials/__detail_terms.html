@@ -1,0 +1,11 @@
+<div>
+	<h3>Uslovi zakupa</h3>
+	<ul>
+		<li>Useljiv: <%= terms.available %></li>
+		<li th:if="${terms.hasDeposit}">Depozit</li>
+		<li th:if="${terms.isForStudents}">Za studente</li>
+		<li th:if="${terms.isForWorkers}">Za radnike</li>
+		<li th:if="${terms.isSmokingAllowed}">Dozvoljeno pušenje</li>
+		<li th:if="${terms.arePetsAllowed}">Dozvoljeni ljubimci</li>
+	</ul>
+</div>

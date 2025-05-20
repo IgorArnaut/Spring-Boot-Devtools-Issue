@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	>
+<meta charset="UTF-8">
+<title layout:fragment="title"></title>
+</head>
+<body>
+	<div>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="/listings">Express Nekretnine</a></li>
+					<li><a href="/listings">Početna</a></li>
+					<li><a href="/listings/search">Pretraga</a></li>
+					<li><a href="/listings/create">Postavi novi oglas</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main layout:fragment="content"></main>
+		<footer>
+			<p>Igor Arnautović 243m/23</p>
+		</footer>
+	</div>
+</body>
+</html>

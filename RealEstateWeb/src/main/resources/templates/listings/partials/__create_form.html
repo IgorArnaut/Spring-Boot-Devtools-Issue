@@ -1,0 +1,136 @@
+<form th:action="@{/oglasi/postavka}"
+	th:object="${listingFormDTO}" method="post">
+	<fieldset>
+		<legend>Informacije o zgradi</legend>
+		<div>
+			<label for="address">Adresa:</label> <input type="text"
+				th:field="${listingFormDTO.building.city}" maxlength="255" required>
+		</div>
+		<div>
+			<label for="constructedIn">Izgrađen:</label> <input type="number"
+				th:field="${listingFormDTO.building.constructedIn}" required>
+		</div>
+		<div>
+			<label for="numOfFloors">Spratnost:</label> <input type="number"
+				th:field="${listingFormDTO.building.numOfFloors}" required>
+		</div>
+		<div>
+			<label for="parking">Parking:</label> <input type="checkbox"
+				th:field="${listingFormDTO.building.parking}">
+		</div>
+		<div>
+			<label for="garage">Garaža:</label> <input type="checkbox"
+				th:field="${listingFormDTO.building.garage}">
+		</div>
+		<div>
+			<label for="elevator">Lift:</label> <input type="checkbox"
+				th:field="${listingFormDTO.building.elevator}">
+		</div>
+		<div>
+			<label for="cctv">Video nadzor:</label> <input type="checkbox"
+				th:field="${listingFormDTO.building.cctv}">
+		</div>
+		<div>
+			<label for="intercom">Interfon:</label> <input type="checkbox"
+				th:field="${listingFormDTO.building.intercom}">
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Informacije o stanu</legend>
+		<div>
+			<label for="location">Lokacija:</label> <input type="text"
+				th:field="${listingFormDTO.apartment.location}" maxlength="255" required>
+		</div>
+		<div>
+			<label for="floor">Sprat:</label> <input type="number"
+				th:field="${listingFormDTO.apartment.floor}" required>
+		</div>
+		<div>
+			<label for="area">Površina:</label> <input type="number"
+				th:field="${listingFormDTO.apartment.area}" required>
+		</div>
+		<div>
+			<label for="price">Cena:</label> <input type="number"
+				th:field="${listingFormDTO.apartment.price}" required>
+		</div>
+		<div>
+			<label for="numOfRooms">Broj soba:</label> <input type="number"
+				th:field="${listingFormDTO.apartment.numOfRooms}" required>
+		</div>
+		<div>
+			<label for="state">Stanje:</label> <select
+				th:field="${listingFormDTO.apartment.state}">
+				<option value="Izvorno">Izvorno</option>
+				<option value="Novo">Novo</option>
+				<option value="Renovirano">Renovirano</option>
+				<option value="Lux">Lux</option>
+			</select>
+		</div>
+		<div>
+			<label for="heating">Grejanje:</label> <select
+				th:field="${listingFormDTO.apartment.heating}">
+				<option value="Gradsko">Gradsko</option>
+				<option value="Etažno">Etažno</option>
+				<option value="Podno">Podno</option>
+				<option value="Struja">Struja</option>
+				<option value="Gas">Gas</option>
+				<option value="TA">TA</option>
+			</select>
+		</div>
+		<div>
+			<label for="equipment">Opremljenost:</label> <select
+				th:field="${listingFormDTO.apartment.equipment}">
+				<option value="Namešten">Namešten</option>
+				<option value="Polunamešten">Polunamešten</option>
+				<option value="Prazan">Prazan</option>
+			</select>
+		</div>
+		<div>
+			<label for="items">Stvari:</label> <select th:field="${listingFormDTO.items}"
+				multiple>
+				<option th:each="item : ${allItems}" th:value="${item.id}"
+					th:text="${item.name}"></option>
+			</select>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Uslovi zakupa</legend>
+		<div>
+			<label for="availableOn">Useljiv:</label> <input type="date"
+				th:field="${listingFormDTO.terms.availableOn}" required>
+		</div>
+		<div>
+			<label for="hasDeposit">Depozit:</label> <input type="checkbox"
+				th:field="${listingFormDTO.terms.hasDeposit}">
+		</div>
+		<div>
+			<label for="isForStudents">Za studente:</label> <input
+				type="checkbox" th:field="${listingFormDTO.terms.isForStudents}">
+		</div>
+		<div>
+			<label for="isForWorkers">Za radnike:</label> <input type="checkbox"
+				th:field="${listingFormDTO.terms.isForWorkers}">
+		</div>
+		<div>
+			<label for="isSmokingAllowed">Dozvoljeno pušenje:</label> <input
+				type="checkbox" th:field="${listingFormDTO.terms.isSmokingAllowed}">
+		</div>
+		<div>
+			<label for="arePetsAllowed">Dozvoljeni ljubimci:</label> <input
+				type="checkbox" th:field="${listingFormDTO.terms.arePetsAllowed}">
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Oglas</legend>
+		<div>
+			<label for="title">Naslov:</label> <input th:field="${listingFormDTO.listing.title}"
+				maxlength="255" required>
+		</div>
+		<div>
+			<label for="description">Opis:</label>
+			<textarea th:field="${listingFormDTO.listing.description}" cols="40" rows="10"
+				required></textarea>
+		</div>
+	</fieldset>
+	<input type="submit" value="Postavi">
+</form>

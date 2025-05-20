@@ -1,0 +1,17 @@
+<div th:fragment="">
+	<h3>Informacije o stanu</h3>
+	<ul>
+		<li
+			th:text="'Sprat: ' + ${apartment.floor} + '/' + ${apartment.building.numOfFloors}"></li>
+		<li th:text="'Površina: ' + ${apartment.area}"></li>
+		<li th:text="'Broj soba: ' + ${apartment.numOfRooms}"></li>
+		<li th:text="'Stanje: ' + ${apartment.state}"></li>
+		<li th:text="'Grejanje: ' + ${apartment.heating}"></li>
+		<li th:text="'Opremljenost: ' + ${apartment.equipment}"></li>
+		<li>Stvari:
+			<ul>
+				<li th:each="item : ${apartment.items}" th:text="${item.name}"></li>
+			</ul>
+		</li>
+	</ul>
+</div>

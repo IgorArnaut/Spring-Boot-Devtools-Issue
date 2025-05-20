@@ -1,0 +1,19 @@
+<div>
+    {% with apartment=listing.apartment %}
+        <h3>
+            {{ apartment.building.street }} {{ apartment.building.street_num }}, {{ apartment.location }}, {{ apartment.building.city }}
+        </h3>
+        <h4>{{ apartment.price }} EUR</h4>
+    {% endwith %}
+    <p>
+        {% if listing.created_at != listing.updated_at %}
+            Postavljen: {{ listing.created_at|date:"d.m.Y h:m" }}
+        {% else %}
+            Ažuriran: {{ listing.updated_at|date:"d.m.Y h:m" }}
+        {% endif %}
+    </p>
+    <p>
+        <a href="{% url 'update' listing.id %}">Izmeni</a> |
+        <a href="{% url 'delete' listing.id %}">Ukloni</a>
+    </p>
+</div>

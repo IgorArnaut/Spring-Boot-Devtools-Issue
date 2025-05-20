@@ -1,0 +1,14 @@
+<%- include("header", { title: listing.title }) %>
+<h2>
+  <%- listing.title %>
+</h2>
+<%- include("partials/__detail_main") %>
+<%- include("partials/__detail_building", { building: listing.apartment.building }) %>
+<%- include("partials/__detail_apartment", { apartment: listing.apartment }) %>
+<%- include("partials/__detail_terms", { terms: listing.terms }) %>
+<div>
+  <p>
+    <%- listing.description %>
+  </p>
+</div>
+<%- include("footer") %>

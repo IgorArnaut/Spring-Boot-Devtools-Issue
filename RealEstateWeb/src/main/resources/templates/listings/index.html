@@ -1,0 +1,21 @@
+<title layout:replace="~{base :: base(title)}">Početna</title>
+<main layout:replace="~{base :: base(content)}">
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Naslov</th>
+				<th>Cena</th>
+				<th>Postavljen</th>
+				<th>Operacije</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="listing : ${listings}">
+				<td><a href="" th:text="${listing.title}"></a></td>
+				<td th:text="${listing.apartment.price} + ' EUR'"></td>
+				<td th:text="${listing.createdAt}"></td>
+				<td><a>Izmeni</a> | <a>Ukloni</a></td>
+			</tr>
+		</tbody>
+	</table>
+</main>

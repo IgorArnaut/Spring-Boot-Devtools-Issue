@@ -1,0 +1,11 @@
+<div>
+	<h3>Informacije o zgradi</h3>
+	<ul>
+		<li th:text="'Izgrađen:' + ${building.constructedIn}"></li>
+		<li th:if="${building.parking}">Parking</li>
+		<li th:if="${building.garage}">Garage</li>
+		<li th:if="${building.elevator}">Lift</li>
+		<li th:if="${building.cctv}">Video nadzor</li>
+		<li th:if="${building.intercom}">Interfon</li>
+	</ul>
+</div>
